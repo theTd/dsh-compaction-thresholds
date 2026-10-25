@@ -1,0 +1,50 @@
+{
+  "name": "dsh-compaction-thresholds",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Per-model auto-compaction trigger (in tokens) for pi-ai LLM providers, edited from Settings > Models and projected into the agent-preset rows' compaction-basic modelPolicies.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theTd/dsh-compaction-thresholds.git"
+  },
+  "homepage": "https://github.com/theTd/dsh-compaction-thresholds#readme",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/policy.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "dsh": "^0.2.1-alpha.5"
+  },
+  "scripts": {
+    "test": "node --test test/"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings-models",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.5",
+    "@deepseek-ai/schemastery": "^3.18.5"
+  },
+  "license": "MIT"
+}

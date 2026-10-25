@@ -1,0 +1,12 @@
+# dsh-compaction-thresholds — one Loader row, two halves:
+#   lib/index.js   host: owns the `compaction-thresholds` volatile settings
+#                  namespace and projects its table into every agent-preset
+#                  row's nested `compaction-basic` config as modelPolicies.
+#   lib/client.js  browser: a block inside the `clay` provider card on
+#                  Settings > Models that edits that table in tokens.
+#
+# The row id doubles as the settings namespace id, so the browser can write it
+# with `settings.mutate('compaction-thresholds', ...)`. Keep the id stable.
+- insert:
+    - id: compaction-thresholds
+      name: dsh-compaction-thresholds
