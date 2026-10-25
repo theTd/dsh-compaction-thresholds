@@ -157,9 +157,7 @@ MIT — see [LICENSE](LICENSE).
 
 ---
 
-<a id="中文"></a>
-
-# 中文
+## 中文
 
 [↑ 回到顶部](#dsh-compaction-thresholds) · [English](#dsh-compaction-thresholds)
 
